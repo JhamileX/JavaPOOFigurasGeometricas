@@ -22,18 +22,19 @@ public class POOFigurasGeometricas {
         Scanner entradaTeclado;
         int opcion;
         
-        System.out.println("+=======================================================+");
-        System.out.println("| Programa: Figuras Geometricas                         |");
-        System.out.println("| - Ejemplo de Encapsulamiento                          |");
-        System.out.println("+=======================================================+");
-        System.out.println("| Que desea realizar?                                   |");
-        System.out.println("| 1) Calcular el area y perimetro de un Circulo         |");
-        System.out.println("| 2) Calcular el area y perimetro de un Cuadrado        |");
-        System.out.println("| 3) Calcular el area y perimetro de un Rectangulo      |");
-        System.out.println("| 4) Calcular el area y perimetro de un Rombo           |");
-        System.out.println("| 5) Calcular el area y perimetro de un Paralelogramo   |");
-        System.out.println("| *) Salir                                              |");
-        System.out.println("+=======================================================+");
+        System.out.println("+==============================================================+");
+        System.out.println("| Programa: Figuras Geometricas                                |");
+        System.out.println("| - Ejemplo de Encapsulamiento                                 |");
+        System.out.println("+==============================================================+");
+        System.out.println("| Que desea realizar?                                          |");
+        System.out.println("| 1) Calcular el area y perimetro de un Circulo                |");
+        System.out.println("| 2) Calcular el area y perimetro de un Cuadrado               |");
+        System.out.println("| 3) Calcular el area y perimetro de un Rectangulo             |");
+        System.out.println("| 4) Calcular el area y perimetro de un Rombo                  |");
+        System.out.println("| 5) Calcular el area y perimetro de un Paralelogramo          |");
+        System.out.println("| 6) Calcular el area y perimetro de un Triangulo Rectangulo   |");
+        System.out.println("| *) Salir                                                     |");
+        System.out.println("+==============================================================+");
         entradaTeclado = new Scanner(System.in);
         opcion = entradaTeclado.nextInt();
         switch (opcion) {
@@ -108,6 +109,21 @@ public class POOFigurasGeometricas {
                 Paralelogramo paralelogramo = new Paralelogramo(base,altura);
                 System.out.println("El Area del Paralelogramo es: " + paralelogramo.getArea());
                 System.out.println("El Perimetro del Paralelogramo es: " + paralelogramo.getPerimetro());
+                break;  
+            case 6:
+                /* Se instancia un objeto de la Clase TrianguloRectangulo y a la vez se inicilaizan los valores
+                   de sus propiedades "CatetoA" y "CatetoB" a través del método Constructor (TrianguloRectangulo). */
+                limpiarConsola();
+                System.out.println("+==================================================+");
+                System.out.println("| SubPrograma: TrianguloRectangulo                 |");
+                System.out.println("+==================================================+");
+                System.out.print("Introduzca el valor del Cateto A: ");
+                double catetoA = entradaTeclado.nextDouble();
+                System.out.print("Introduzca el valor del Cateto B: ");
+                double catetoB = entradaTeclado.nextDouble();
+                TrianguloRectangulo trianguloRectangulo = new TrianguloRectangulo(catetoA, catetoB);
+                System.out.println("El Area del Triangulo Rectangulo es: " + trianguloRectangulo.getArea());
+                System.out.println("El Perimetro del Triangulo Rectangulo es: " + trianguloRectangulo.getPerimetro());
                 break;  
             default:
                 System.out.println("Salio del programa");
