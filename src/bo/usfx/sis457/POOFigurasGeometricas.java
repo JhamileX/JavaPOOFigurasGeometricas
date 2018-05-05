@@ -31,6 +31,7 @@ public class POOFigurasGeometricas {
         System.out.println("| 2) Calcular el area y perimetro de un Cuadrado        |");
         System.out.println("| 3) Calcular el area y perimetro de un Rectangulo      |");
         System.out.println("| 4) Calcular el area y perimetro de un Rombo           |");
+        System.out.println("| 5) Calcular el area y perimetro de un Paralelogramo   |");
         System.out.println("| *) Salir                                              |");
         System.out.println("+=======================================================+");
         entradaTeclado = new Scanner(System.in);
@@ -93,6 +94,21 @@ public class POOFigurasGeometricas {
                 System.out.println("El Area del Rombo es: " + rombo.getArea());
                 System.out.println("El Perimetro del Rombo es: " + rombo.getPerimetro());
                 break;
+            case 5:
+                /* Se instancia un objeto de la Clase Paralelogramo y a la vez se inicilaizan los valores
+                   de sus propiedades "Base" y "Altura" a través del método Constructor (Paralelogramo). */
+                limpiarConsola();
+                System.out.println("+==================================================+");
+                System.out.println("| SubPrograma: Paralelogramo                       |");
+                System.out.println("+==================================================+");
+                System.out.print("Introduzca el valor de la Base: ");
+                base = entradaTeclado.nextDouble();
+                System.out.print("Introduzca el valor de la Altura: ");
+                altura = entradaTeclado.nextDouble();
+                Paralelogramo paralelogramo = new Paralelogramo(base,altura);
+                System.out.println("El Area del Paralelogramo es: " + paralelogramo.getArea());
+                System.out.println("El Perimetro del Paralelogramo es: " + paralelogramo.getPerimetro());
+                break;  
             default:
                 System.out.println("Salio del programa");
         }
