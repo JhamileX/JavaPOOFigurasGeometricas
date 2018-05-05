@@ -1,8 +1,9 @@
-/*
+/**
  * Ejemplo del Principio de Encapsulamiento 
  */
 package bo.usfx.sis457;
 
+import static bo.usfx.sis457.POOFigurasGeometricas.limpiarConsola;
 import bo.usfx.sis457.figuras.*;
 import java.util.Scanner;
 
@@ -21,16 +22,17 @@ public class POOFigurasGeometricas {
         Scanner entradaTeclado;
         int opcion;
         
-        System.out.println("+==================================================+");
-        System.out.println("| Programa: Figuras Geometricas                    |");
-        System.out.println("| - Ejemplo de Encapsulamiento                     |");
-        System.out.println("+==================================================+");
-        System.out.println("| Que desea realizar?                              |");
-        System.out.println("| 1) Calcular el area y perimetro de un Circulo    |");
-        System.out.println("| 2) Calcular el area y perimetro de un Cuadrado   |");
-        System.out.println("| 3) Calcular el area y perimetro de un Rectangulo |");
-        System.out.println("| *) Salir                                         |");
-        System.out.println("+==================================================+");
+        System.out.println("+=======================================================+");
+        System.out.println("| Programa: Figuras Geometricas                         |");
+        System.out.println("| - Ejemplo de Encapsulamiento                          |");
+        System.out.println("+=======================================================+");
+        System.out.println("| Que desea realizar?                                   |");
+        System.out.println("| 1) Calcular el area y perimetro de un Circulo         |");
+        System.out.println("| 2) Calcular el area y perimetro de un Cuadrado        |");
+        System.out.println("| 3) Calcular el area y perimetro de un Rectangulo      |");
+        System.out.println("| 4) Calcular el area y perimetro de un Rombo           |");
+        System.out.println("| *) Salir                                              |");
+        System.out.println("+=======================================================+");
         entradaTeclado = new Scanner(System.in);
         opcion = entradaTeclado.nextInt();
         switch (opcion) {
@@ -75,6 +77,21 @@ public class POOFigurasGeometricas {
                 Rectangulo rectangulo = new Rectangulo(base, altura);
                 System.out.println("El Area del Rectangulo es: " + rectangulo.getArea());
                 System.out.println("El Perimetro del Rectangulo es: " + rectangulo.getPerimetro());
+                break;
+            case 4:
+                /* Se instancia un objeto de la Clase Rombo y a la vez se inicilaizan los valores
+                   de sus propiedades "dMayor" y "dMenor" a través del método Constructor (Rombo). */
+                limpiarConsola();
+                System.out.println("+==================================================+");
+                System.out.println("| SubPrograma: Rombo                               |");
+                System.out.println("+==================================================+");
+                System.out.print("Introduzca el valor de la Diagonal Mayor: ");
+                double DMayor = entradaTeclado.nextDouble();
+                System.out.print("Introduzca el valor de la Diagonal Menor: ");
+                double DMenor = entradaTeclado.nextDouble();
+                Rombo rombo = new Rombo(DMayor,DMenor);
+                System.out.println("El Area del Rombo es: " + rombo.getArea());
+                System.out.println("El Perimetro del Rombo es: " + rombo.getPerimetro());
                 break;
             default:
                 System.out.println("Salio del programa");
